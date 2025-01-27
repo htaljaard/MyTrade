@@ -8,11 +8,17 @@
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.8" />
+		<PackageReference Include="Serilog.AspNetCore" Version="9.0.0" />
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="MediatR" Version="12.4.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\MyTrade.Companies\MyTrade.Companies.csproj" />
+	  <ProjectReference Include="..\MyTrade.Users\MyTrade.Users.csproj" />
 	</ItemGroup>
 
 </Project>
