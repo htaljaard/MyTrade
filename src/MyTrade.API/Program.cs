@@ -1,4 +1,7 @@
 using System.Reflection;
+using FastEndpoints;
+using FastEndpoints.Security;
+using FastEndpoints.Swagger;
 using MyTrade.Users.Extensions;
 using Serilog;
 
@@ -16,25 +19,20 @@ builder.Host.UseSerilog((ctx, config) =>
     config.ReadFrom.Configuration(builder.Configuration);
 });
 
+builder.Services
+    .AddAuthenticationJwtBearer(s => s.SigningKey = builder.Configuration.GetValue<string>("Auth:JWTSecret"))
+    .AddAuthorization()
+    .SwaggerDocument();
+
+//Mediator Assemblies
 List<Assembly> mediatorAssemblies = new List<Assembly>();
-
-//Services
 builder.Services.AddUserModule(builder.Configuration, mediatorAssemblies, logger);
-
-// Add Swagger services
-if (builder.Environment.IsDevelopment())
-{
-    builder.Services.AddEndpointsApiExplorer();
-    builder.Services.AddSwaggerGen();
-}
 
 var app = builder.Build();
 
-// Configure Swagger middleware
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseAuthentication();
+app.UseAuthorization();
+
+app.UseFastEndpoints().UseSwaggerGen();
 
 app.Run();
