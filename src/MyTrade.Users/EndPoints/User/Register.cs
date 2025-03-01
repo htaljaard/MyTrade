@@ -16,7 +16,7 @@ internal class Register : Endpoint<RegisterRequest>
 
     public override void Configure()
     {
-        Post("/users/register");
+        Post("/api/users/register");
         AllowAnonymous();
     }
 
@@ -30,11 +30,11 @@ internal class Register : Endpoint<RegisterRequest>
                 UserName = req.Email
             };
 
-            var existingUser = _userManager.FindByEmailAsync(newUser.Email);
+            var existingUser = await _userManager.FindByEmailAsync(newUser.Email);
 
             if (existingUser != null)
             {
-                AddError("User already existgs");
+                AddError("User already exists");
                 await SendErrorsAsync();
                 return;
             }

@@ -26,7 +26,7 @@ namespace MyTrade.Users.EndPoints.User
 
         public override void Configure()
         {
-            Post("/users/login");
+            Post("/api/users/login");
             AllowAnonymous();
         }
 
