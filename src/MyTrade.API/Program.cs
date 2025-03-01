@@ -23,8 +23,9 @@ builder.Host.UseSerilog((ctx, config) =>
 
 builder.Services
     .AddAuthenticationJwtBearer(s => s.SigningKey = builder.Configuration.GetValue<string>("Auth:JWTSecret"))
-    .AddAuthorization()
-    .SwaggerDocument();
+    .AddAuthorization();
+
+builder.Services.AddFastEndpoints().AddSwaggerDocument();
 
 //Mediator Assemblies
 List<Assembly> mediatorAssemblies = new List<Assembly>();

@@ -1,5 +1,11 @@
+@HostURL=https://localhost:7167
 @UserName=hein.taljaard@gmail.com
 @Password=P@ssw0rd123
 
 #Register User
-POST http://localhost:5000/api/users/register
+POST https://localhost:5000/api/users/register
+
+{
+  "email": {{UserName}},
+  "password": {{Password}},
+}

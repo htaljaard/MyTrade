@@ -4,8 +4,6 @@ using Microsoft.Extensions.Logging;
 using MyTrade.Users.Domain;
 
 namespace MyTrade.Users.EndPoints.User;
-
-public record RegisterRequest(string Email, string Password);
 internal class Register : Endpoint<RegisterRequest>
 {
     private readonly UserManager<ApplicationUser> _userManager;
