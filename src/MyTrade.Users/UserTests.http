@@ -1,0 +1,5 @@
+@UserName=hein.taljaard@gmail.com
+@Password=P@ssw0rd123
+
+#Register User
+POST http://localhost:5000/api/users/register

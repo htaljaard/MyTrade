@@ -10,7 +10,9 @@ var logger = Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()
     .CreateLogger();
 
-logger.Information("Starting MyTrade Web Host");
+var appName = "MyTrade";
+
+logger.Information("Starting {App} Web Host", appName);
 
 var builder = WebApplication.CreateBuilder(args);
 
