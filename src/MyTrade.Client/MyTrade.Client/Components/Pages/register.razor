@@ -1,0 +1,40 @@
+﻿@using MyTrade.Client.Components.Layout
+@using MudBlazor
+@using Microsoft.AspNetCore.Components
+
+@page "/Register"
+@layout UnAuthenticated
+
+<MudStack AlignItems="AlignItems.Center" Style="height: 100vh;">
+    <MudContainer MaxWidth="MaxWidth.Small">
+        <MudCard>
+            <MudCardContent>
+                <MudTextField @bind-Value="username" Label="Username" Required="true" />
+                <MudTextField @bind-Value="password" Label="Password" InputType="InputType.Password" Required="true" />
+            </MudCardContent>
+            <MudCardActions>
+                <MudButton OnClick="RegisterUser" Color="Color.Primary">Register</MudButton>
+            </MudCardActions>
+        </MudCard>
+    </MudContainer>
+</MudStack>
+
+@code {
+    private string username = "";
+    private string password = "";
+
+    [Inject]
+    private NavigationManager Navigation { get; set; } = default!;
+
+    private void RegisterUser()
+    {
+        // Add login logic here
+        var x = username;
+        var y = password;
+    }
+
+    private void NavigateToRegister()
+    {
+        Navigation.NavigateTo("/register");
+    }
+}
