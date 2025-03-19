@@ -6,6 +6,7 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_SolutionItems", "_SolutionItems", "{4A3F4E47-D2ED-4D05-A22A-50E86ADE2490}"
 	ProjectSection(SolutionItems) = preProject
 		Directory.Build.props = Directory.Build.props
+		Directory.Packages.props = Directory.Packages.props
 		docker-compose.yml = docker-compose.yml
 		LICENSE = LICENSE
 		README.md = README.md
@@ -26,12 +27,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserModule", "UserModule", "{9243FDE8-ADA5-46F9-84F1-A20A0F540572}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTrade.Users", "MyTrade.Users\MyTrade.Users.csproj", "{B42F96A9-5103-41EB-BF91-BDAA7FE5AF54}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A4C8BDE5-CCD8-49C8-A33E-27B681FA223B}"
-	ProjectSection(SolutionItems) = preProject
-		.gitignore = .gitignore
-		docker-compose.yml = docker-compose.yml
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTrade.Client", "MyTrade.Client\MyTrade.Client\MyTrade.Client.csproj", "{206C3219-DAA1-4F53-957D-44EE1ACC601F}"
 EndProject
